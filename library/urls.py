@@ -9,6 +9,6 @@ urlpatterns = [
     path('category/book/add/', add_book, name="add_book"),
     #path('category/book/delete/<int:book_id>/', delete_book, name="delete_book"),
     #path('category/book/update/<int:book_id>/', update_book, name="update_book"),
-    path('category/book/list/<int:book_id>/', list_book, name="list_book"),
+    path('category/book/list/', list_book, name="list_book"),
 
 ]

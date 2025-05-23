@@ -58,9 +58,10 @@ def delete_category(request, category_id):
 
 #---------------------------BOOK------------------------------
 
-def list_book(request, book_id):
-    book = get_object_or_404(Book, id=book_id)
-    return render(request, "book/list_book.html", {"book":book})
+def list_book(request):
+    #book = get_object_or_404(Book, id=book_id)
+    books = Book.objects.all()
+    return render(request, "book/list_book.html", {"books":books})
 
 
 
@@ -72,7 +73,7 @@ def add_book(request):
 
         if form.is_valid():
             form.save()
-            return redirect("/")
+            return redirect("list_book")
     else:
         form = BookForm()
     
